@@ -7,14 +7,14 @@ function useWeatherAPI(city)
 
     useEffect(()=>{
         try {
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=${API_KEY}`).
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`).
             then((res)=> res.json()).
-            then((res)=>{ setData(res)});
+            then((res)=>{ setData(res);  });
+            console.log(data);
         } 
         catch (error) {
             console.error("API Error : ",error);
         }
-        
     },[city])
 
     return data;
