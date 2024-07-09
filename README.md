@@ -1,8 +1,5 @@
-# React + Vite
+City-Weather-App:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic and user-friendly Weather App, completely responsive for all screen sizes comes with a dynamic background that changes according to the current weather conditions, adding a unique touch to the user experience.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live at : https://city-weatherr-app.netlify.app/
