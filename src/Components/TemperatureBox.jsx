@@ -1,8 +1,8 @@
 import WeatherProperties from "./WeatherProperties";
 import windLogo from "../Assets/wind.png"
 import humidityLogo from "../Assets/humidity.png"
-// import wind from "../Assets/wind.png"
-// import wind from "../Assets/wind.png"
+import visibilityLogo from "../Assets/visibility.png"
+import pressureLogo from "../Assets/pressure.png"
 
 function TemperatureBox(
     {
@@ -30,8 +30,8 @@ function TemperatureBox(
          <div className="flex w-full h-full items-center justify-center flex-wrap mt-2">
             <WeatherProperties logo={humidityLogo} name="Humidity" value = {humidity}/>
             <WeatherProperties logo={windLogo} name="Wind Speed" value = {wind}/>
-            <WeatherProperties logo={humidityLogo} name="Visibility" value = {visibility}/>
-            <WeatherProperties logo={windLogo} name="Pressure" value = {pressure}/>
+            <WeatherProperties logo={visibilityLogo} name="Visibility" value = {visibility}/>
+            <WeatherProperties logo={pressureLogo} name="Pressure" value = {pressure}/>
          </div>
 
         </div>
