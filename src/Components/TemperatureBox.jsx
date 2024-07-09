@@ -20,7 +20,7 @@ function TemperatureBox(
                 <p className="sm:p-2 font-thin sm:self-center ">
                 {weatherName}
                 </p>
-                <p className="self-center text-md sm:p-2 font-thin ">
+                <p className="self-center text-md sm:text-xl font-thin ">
                     {city}, <b>{country}</b>
                 </p>
             </div>

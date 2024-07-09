@@ -5,6 +5,11 @@ import { useEffect, useState } from "react"
 
 function App() {
   const [city,setCity] = useState("Mumbai");
+  // const [error, setError] = useState(null);
+
+  // if(error){
+  //   alert(error);
+  // }
 
   const bgImages = {
     Clouds : "url('https://images.unsplash.com/photo-1599806112354-67f8b5425a06?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGFyayUyMGNsb3Vkc3xlbnwwfHwwfHx8MA%3D%3D')",
@@ -31,7 +36,8 @@ function App() {
   });
 
   const weatherInfo = useWeatherAPI(city);
-  console.log("Weather Info : ",weatherInfo);
+  // console.log("Weather Info : ",weatherInfo);
+
 
   useEffect(()=>{
     if (weatherInfo && weatherInfo.main && weatherInfo.sys && weatherInfo.wind) {
@@ -49,14 +55,18 @@ function App() {
         }
       )
     }
+    else{
+      if(city!="Mumbai")
+        alert("City Not Found !!");
+    }
   },[weatherInfo]);
 
 
   return (
-     <div className="w-full h-screen bg-no-repeat bg-center bg-cover z-0 justify-center flex items-center" style={{backgroundImage: info.bgImage, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="w-full h-screen  flex justify-center items-center backdrop-blur-lg sm:p-4 p-0">
+     <div className="w-full min-h-screen bg-no-repeat bg-center bg-cover z-0 justify-center flex items-center" style={{backgroundImage: info.bgImage, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="w-full min-h-screen flex justify-center items-center backdrop-blur-lg sm:p-4 p-0">
         <div className="md:w-9/12 sm:w-full md:h-5/6 h-full sm:border-2 sm:border-white border-none sm:rounded-3xl rounded-none">
-        <div className="w-full h-full sm:rounded-3xl sm:border-2 sm:border-white overflow-scroll" style={{backgroundImage: info.bgImage, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="w-full h-full sm:rounded-3xl sm:border-2 sm:border-white" style={{backgroundImage: info.bgImage, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
           <div className="w-full h-full  flex flex-col items-center p-6 rounded-3xl backdrop-blur-none">
             <SearchBar 
@@ -64,7 +74,7 @@ function App() {
             />
             <div className="flex justify-center w-full h-full items-center mt-4">
               
-            <div className="bg-no-repeat bg-cover bg-center md:w-3/5 sm:w-4/5 h-fit w-11/12 rounded-3xl sm:border-none border-2" style={{backgroundImage: info.bgImage, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="bg-no-repeat bg-cover bg-center md:w-3/5 sm:w-4/5 sm:h-fit h-5/6 w-11/12 rounded-3xl sm:border-none border-2" style={{backgroundImage: info.bgImage, backgroundSize: 'cover', backgroundPosition: 'center' }}>
               <TemperatureBox 
                 temperature = {info.temperature}
                 weatherName = {info.weatherName}
