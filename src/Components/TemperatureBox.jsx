@@ -28,10 +28,10 @@ function TemperatureBox(
          </div>
          
          <div className="flex w-full h-full items-center justify-center flex-wrap mt-2">
-            <WeatherProperties logo={humidityLogo} name="Humidity" value = {humidity}/>
-            <WeatherProperties logo={windLogo} name="Wind Speed" value = {wind}/>
-            <WeatherProperties logo={visibilityLogo} name="Visibility" value = {visibility}/>
-            <WeatherProperties logo={pressureLogo} name="Pressure" value = {pressure}/>
+            <WeatherProperties logo={humidityLogo} name="Humidity" value = {humidity+"%"}/>
+            <WeatherProperties logo={windLogo} name="Wind Speed" value = {wind+" Km/h"}/>
+            <WeatherProperties logo={visibilityLogo} name="Visibility" value = {visibility+" mi"}/>
+            <WeatherProperties logo={pressureLogo} name="Pressure" value = {pressure+' "Hg'}/>
          </div>
 
         </div>

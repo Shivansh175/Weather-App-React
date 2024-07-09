@@ -13,7 +13,7 @@ function useWeatherAPI(city)
             } 
             catch (error) {
                 console.error("API Error : ",error);
-                throw alert("City not Found !!");
+                // throw alert("City not Found !!");
             }
         }
     fetchWeather();
